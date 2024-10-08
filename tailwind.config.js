@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        oswald: ["Oswald", "sans-serif"],
+        Abril: ["Abril Fatface", "serif"],
+        Ubuntu: ["Ubuntu", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 }
