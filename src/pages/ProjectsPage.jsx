@@ -29,19 +29,19 @@ function ProjectsPage() {
       src: cc,
       title: 'Code Craft Hackathon',
       description: 'The Website for 24 hours Code Craft Hackathon of Department Of Mtech CSE',
-      link: 'https://code-craft.xyz', // Add your link here
+      link: 'https://code-craft.xyz', 
     },
     {
       src: innovatia,
       title: 'Innovatia 23',
       description: 'The Website for Innovatia 23 of Department Of Mtech CSE',
-      link: 'https://innovatia23.tech', // Add your link here
+      link: 'https://innovatia23.tech',
     },
     {
       src: seyal,
       title: 'Seyal Foundation',
       description: 'The Website for Seyal Foundation NGO',
-      link: 'https://seyalngo.org', // Add your link here
+      link: 'https://seyalngo.org',
     },
     {
       src: valo,
@@ -66,13 +66,13 @@ function ProjectsPage() {
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (scrollContainer) {
-      // Clone the project data to create a seamless scrolling effect
+ 
       const cloneProjects = [...projectData, ...projectData];
 
-      // Create HTML elements for the project cards
+
       cloneProjects.forEach((project, index) => {
         const card = document.createElement('div');
-        card.className = 'flex-shrink-0 w-64'; // Set width as needed
+        card.className = 'flex-shrink-0 w-64';
         card.innerHTML = `
           <a href="${project.link}" class="flex flex-col justify-between items-center h-full text-white no-underline" target="_blank">
             <img src="${project.src}" alt="${project.title}" class="w-full h-48 object-cover" />
@@ -83,19 +83,19 @@ function ProjectsPage() {
         scrollContainer.appendChild(card);
       });
 
-      const scrollSpeed = 1; // Adjust this value to change the speed of auto-scrolling
+      const scrollSpeed = 1; 
       let scrollInterval;
 
       const autoScroll = () => {
         scrollContainer.scrollLeft += scrollSpeed;
 
-        // Loop the scroll if it exceeds the width of the container
+        
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
           scrollContainer.scrollLeft = scrollContainer.scrollLeft - (scrollContainer.scrollWidth / 2);
         }
       };
 
-      scrollInterval = setInterval(autoScroll, 10); // Adjust the interval for smoother effect
+      scrollInterval = setInterval(autoScroll, 10); 
 
       return () => {
         clearInterval(scrollInterval);
@@ -105,7 +105,7 @@ function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-center bg-[url('./axiom-pattern.png')] bg-repeat overflow-y-auto">
-      {/* Horizontal scroll container */}
+     
       <div className="flex justify-center pt-16">
         <h1 className="text-white text-5xl font-DmSerif">My Projects</h1>
       </div>
@@ -121,17 +121,17 @@ function ProjectsPage() {
               src={project.src}
               title={project.title}
               description={project.description}
-              link={project.link} // Pass the link to the ProjectCard
+              link={project.link} // 
             />
           ))}
-          {/* Clone the project data to create the infinite effect */}
+         
           {projectData.map((project, index) => (
             <ProjectCard
-              key={index + projectData.length} // Ensure unique keys
+              key={index + projectData.length} 
               src={project.src}
               title={project.title}
               description={project.description}
-              link={project.link} // Pass the link to the ProjectCard
+              link={project.link} 
             />
           ))}
         </div>
