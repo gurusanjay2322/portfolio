@@ -1,22 +1,32 @@
-import React from 'react';
+import React from "react";
 
 function Navbar() {
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const offsetTop = section.offsetTop - 30; 
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  else{
+      console.log("Section not found");
+    }
+    console.log(id);
+  };
+
   return (
-    <nav className="bg-transparent p-4 fixed top-0 left-0 w-full z-10">
-      <ul className="flex justify-center space-x-8">
-        <li>
-          <a href="/" className="text-text text-lg hover:text-secondary">Home</a>
-        </li>
-        <li>
-          <a href="about" className="text-text text-lg hover:text-secondary">About</a>
-        </li>
-        <li>
-          <a href="projects" className="text-text text-lg hover:text-secondary">Projects</a>
-        </li>
-        <li>
-          <a href="contact" className="text-text text-lg hover:text-secondary">Contact</a>
-        </li>
-      </ul>
+    <nav className=" flex justify-center space-x-8 bg-transparent p-4 fixed top-0 left-0 w-full z-10">
+      {["home", "About", "projects", "contact"].map((section) => (
+        <button
+        key={section}
+          className="transition-all duration-300 hover:scale-125 active:scale-95 text-text text-lg hover:text-secondary"
+          onClick={() => handleScroll(section)}
+        >
+          {section.charAt(0).toUpperCase() + section.slice(1)}
+        </button>
+      ))}
     </nav>
   );
 }

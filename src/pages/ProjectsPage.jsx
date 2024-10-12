@@ -104,39 +104,41 @@ function ProjectsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-center bg-[url('./axiom-pattern.png')] bg-repeat overflow-y-auto">
-     
-      <div className="flex justify-center pt-16">
-        <h1 className="text-white text-5xl font-DmSerif">My Projects</h1>
-      </div>
-
-      <div 
-        ref={scrollRef} 
-        className="overflow-x-hidden flex flex-nowrap h-[calc(100vh-280px)] whitespace-nowrap"
-      >
-        <div className="flex flex-row gap-5 min-w-max pt-10">
-          {projectData.map((project, index) => (
-            <ProjectCard
-              key={index}
-              src={project.src}
-              title={project.title}
-              description={project.description}
-              link={project.link} // 
-            />
-          ))}
-         
-          {projectData.map((project, index) => (
-            <ProjectCard
-              key={index + projectData.length} 
-              src={project.src}
-              title={project.title}
-              description={project.description}
-              link={project.link} 
-            />
-          ))}
+    <section id="projects">
+      <div className="min-h-screen bg-center bg-[url('./axiom-pattern.png')] bg-repeat overflow-y-auto" id="projects">
+      
+        <div className="flex justify-center pt-16">
+          <h1 className="text-white text-5xl font-DmSerif">My Projects</h1>
+        </div>
+        <div
+          ref={scrollRef}
+          className="overflow-x-hidden flex flex-nowrap h-[calc(100vh-280px)] whitespace-nowrap"
+        >
+          <div className="flex flex-row gap-5 min-w-max pt-10">
+      
+            {projectData.map((project, index) => (
+              <ProjectCard
+                key={index}
+                src={project.src}
+                title={project.title}
+                description={project.description}
+                link={project.link} //
+              />
+            ))}
+      
+            {projectData.map((project, index) => (
+              <ProjectCard
+                key={index + projectData.length}
+                src={project.src}
+                title={project.title}
+                description={project.description}
+                link={project.link}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
