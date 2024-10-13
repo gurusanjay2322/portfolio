@@ -17,13 +17,13 @@ function ProjectsPage() {
       src: movies,
       title: 'Movies-GS',
       description: 'A simple application developed using react springboot and mongodb to view and review movies',
-      link: 'https://movies-gs.vercel.app', // Add your link here
+      link: 'https://movies-gs.vercel.app',
     },
     {
       src: ieee,
       title: 'IEEE SMC Student Branch Sairam',
       description: 'The website of IEEE SMC Student Branch Sairam',
-      link: 'https://edu.ieee.org/sairamin-smc', // Add your link here
+      link: 'https://edu.ieee.org/sairamin-smc',
     },
     {
       src: cc,
@@ -59,73 +59,53 @@ function ProjectsPage() {
       src: flask,
       title: 'Speech To Text Server',
       description: 'A flask server for converting speech to text',
-      link: 'https://github.com/gurusanjay2322/SpeechToText-Flask', // Add your link here
+      link: 'https://github.com/gurusanjay2322/SpeechToText-Flask',
     },
   ];
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
-    if (scrollContainer) {
- 
-      const cloneProjects = [...projectData, ...projectData];
+    const scrollSpeed = 1;
+    let scrollInterval;
 
+    const autoScroll = () => {
+      scrollContainer.scrollLeft += scrollSpeed;
+      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+        scrollContainer.scrollLeft = 0;
+      }
+    };
 
-      cloneProjects.forEach((project, index) => {
-        const card = document.createElement('div');
-        card.className = 'flex-shrink-0 w-64';
-        card.innerHTML = `
-          <a href="${project.link}" class="flex flex-col justify-between items-center h-full text-white no-underline" target="_blank">
-            <img src="${project.src}" alt="${project.title}" class="w-full h-48 object-cover" />
-            <h2 class="text-xl">${project.title}</h2>
-            <p class="text-gray-300">${project.description}</p>
-          </a>
-        `;
-        scrollContainer.appendChild(card);
-      });
+    scrollInterval = setInterval(autoScroll, 10);
 
-      const scrollSpeed = 1; 
-      let scrollInterval;
-
-      const autoScroll = () => {
-        scrollContainer.scrollLeft += scrollSpeed;
-
-        
-        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-          scrollContainer.scrollLeft = scrollContainer.scrollLeft - (scrollContainer.scrollWidth / 2);
-        }
-      };
-
-      scrollInterval = setInterval(autoScroll, 10); 
-
-      return () => {
-        clearInterval(scrollInterval);
-      };
-    }
-  }, []);
+    return () => {
+      clearInterval(scrollInterval);
+    };
+  }, [projectData]);
 
   return (
     <section id="projects">
-      <div className="min-h-screen bg-center bg-[url('./axiom-pattern.png')] bg-repeat overflow-y-auto" id="projects">
-      
+      <div className="min-h-screen bg-center bg-[url('./axiom-pattern.png')] bg-repeat overflow-y-auto">
         <div className="flex justify-center pt-16">
-          <h1 className="text-white text-5xl font-DmSerif">My Projects</h1>
+          <h1 className="text-5xl font-RockSalt text-primary font-bold">My Projects</h1>
         </div>
+
+        {/* Scrolling container */}
         <div
           ref={scrollRef}
-          className="overflow-x-hidden flex flex-nowrap h-[calc(100vh-280px)] whitespace-nowrap"
+          className="overflow-hidden flex flex-nowrap h-[calc(100vh-280px)] whitespace-nowrap"
         >
           <div className="flex flex-row gap-5 min-w-max pt-10">
-      
             {projectData.map((project, index) => (
               <ProjectCard
                 key={index}
                 src={project.src}
                 title={project.title}
                 description={project.description}
-                link={project.link} //
+                link={project.link}
               />
             ))}
-      
+
+            {/* Duplicate cards to create a continuous scrolling effect */}
             {projectData.map((project, index) => (
               <ProjectCard
                 key={index + projectData.length}
@@ -137,6 +117,8 @@ function ProjectsPage() {
             ))}
           </div>
         </div>
+
+        
       </div>
     </section>
   );

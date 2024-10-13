@@ -10,7 +10,7 @@ function About() {
             <img src={photo} alt="My Photo" className="w-[400px] h-[400px] mx-auto rounded-md " />
           </div>
           <div className="w-[65%] ">
-            <p className="text-primary font-bold font-DmSerif text-5xl mx-auto w-[85%] mb-4">
+            <p className="text-primary font-bold font-RockSalt text-5xl mx-auto w-[85%] mb-4">
               About Myself
             </p>
             <p className="text-left text-text text-2xl font-Ubuntu w-[85%] mx-auto">
