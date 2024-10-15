@@ -1,8 +1,8 @@
 import React from 'react';
-
+import backgroundImage from '../assets/backgrounds/pattern2.png';
 const Experience = ({ experiences }) => {
   return (
-    <div className="flex flex-col justify-center items-center  bg-center bg-[url('./pattern2.png')] h-screen" id='Experience' >
+    <div className="flex flex-col justify-center items-center bg-center h-screen"  style={{backgroundImage: `url(${backgroundImage})`}} id='Experience'  >
       <h2 className="text-5xl  text-center mb-8 text-lightPrimary dark:text-primary font-bold font-RockSalt">Experience</h2>
       <div className="max-w-4xl mx-auto ">
         {experiences.map((experience, index) => (

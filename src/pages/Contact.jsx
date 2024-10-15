@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import emailjs from "emailjs-com";
 import Lottie from "react-lottie";
 import data from "../assets/data.json";
-
+import backgroundImage from '../assets/backgrounds/axiom-pattern.png';
 import { FaGithubSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 function Contact() {
   const form = useRef();
@@ -42,7 +42,7 @@ function Contact() {
 
   return (
     <div
-      className="h-screen flex flex-col justify-center items-center bg-center bg-[url('./axiom-pattern.png')]"
+      className="h-screen flex flex-col justify-center items-center bg-center " style={{backgroundImage: `url(${backgroundImage})`}}
       id="contact"
     >
       <h1 className="font-bold font-RockSalt text-lightPrimary dark:text-primary text-5xl mb-6 text-center">

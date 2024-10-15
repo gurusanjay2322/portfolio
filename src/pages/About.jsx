@@ -1,10 +1,10 @@
 import React from "react";
 import photo from '../assets/me.jpg';
-
+import backgroundImage from '../assets/backgrounds/pattern2.png';
 function About() {
   return (
     <section id="About">
-      <div className="h-screen flex justify-center items-center bg-center bg-[url('./pattern2.png')] ">
+      <div className="h-screen flex justify-center items-center bg-center" style={{backgroundImage: `url(${backgroundImage})`}}>
         <div className="flex items-center justify-center">
           <div className="w-[35%] items-center">
             <img src={photo} alt="My Photo" className="w-[400px] h-[400px] mx-auto rounded-md " />

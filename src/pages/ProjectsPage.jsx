@@ -8,7 +8,7 @@ import innovatia from '../assets/innovatia.png';
 import valo from '../assets/valo.jpg';
 import firebase from '../assets/firebase.png';
 import flask from '../assets/flask.png';
-
+import backgroundImage from '../assets/backgrounds/axiom-pattern.png';
 function ProjectsPage() {
   const scrollRef = useRef(null);
 
@@ -84,7 +84,7 @@ function ProjectsPage() {
 
   return (
     <section id="projects" >
-      <div className="min-h-screen  items-center bg-center bg-[url('./axiom-pattern.png')] bg-repeat overflow-y-auto">
+      <div className="min-h-screen  items-center bg-center  bg-repeat overflow-y-auto" style={{backgroundImage: `url(${backgroundImage})`}}>
         <div className="flex justify-center pt-32">
           <h1 className="text-5xl font-RockSalt text-lightPrimary dark:text-primary font-bold">My Projects</h1>
         </div>
