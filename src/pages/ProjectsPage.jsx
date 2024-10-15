@@ -9,6 +9,7 @@ import valo from '../assets/valo.jpg';
 import firebase from '../assets/firebase.png';
 import flask from '../assets/flask.png';
 import backgroundImage from '../assets/backgrounds/axiom-pattern.png';
+
 function ProjectsPage() {
   const scrollRef = useRef(null);
 
@@ -65,28 +66,46 @@ function ProjectsPage() {
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
-    const scrollSpeed = 1;
+    const scrollSpeed = 1;  // Adjust scroll speed as needed
     let scrollInterval;
 
     const autoScroll = () => {
+      // Move the scroll container to the right
       scrollContainer.scrollLeft += scrollSpeed;
-      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-        scrollContainer.scrollLeft = 0;
+
+      // Reset scroll position when the user reaches the end
+      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+        scrollContainer.scrollLeft = 0;  // Go back to the start
       }
     };
 
-    scrollInterval = setInterval(autoScroll, 10);
+    const startScrolling = () => {
+      scrollInterval = setInterval(autoScroll, 10); // Control scroll speed by adjusting the interval
+    };
 
-    return () => {
+    const stopScrolling = () => {
       clearInterval(scrollInterval);
+    };
+
+    // Start scrolling
+    startScrolling();
+
+    // Cleanup on component unmount
+    return () => {
+      stopScrolling();
     };
   }, [projectData]);
 
   return (
-    <section id="projects" >
-      <div className="min-h-screen  items-center bg-center  bg-repeat overflow-y-auto" style={{backgroundImage: `url(${backgroundImage})`}}>
+    <section id="projects">
+      <div
+        className="min-h-screen bg-center bg-repeat overflow-y-auto"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
         <div className="flex justify-center pt-32">
-          <h1 className="text-5xl font-RockSalt text-lightPrimary dark:text-primary font-bold">My Projects</h1>
+          <h1 className="text-5xl font-RockSalt text-lightPrimary dark:text-primary font-bold">
+            My Projects
+          </h1>
         </div>
 
         {/* Scrolling container */}
@@ -95,6 +114,7 @@ function ProjectsPage() {
           className="overflow-hidden flex flex-nowrap justify-center items-center h-[calc(100vh-280px)] whitespace-nowrap"
         >
           <div className="flex flex-row gap-5 min-w-max pt-10">
+            {/* Render project cards */}
             {projectData.map((project, index) => (
               <ProjectCard
                 key={index}
@@ -117,8 +137,6 @@ function ProjectsPage() {
             ))}
           </div>
         </div>
-
-        
       </div>
     </section>
   );
