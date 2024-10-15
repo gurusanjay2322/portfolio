@@ -75,7 +75,7 @@ function ProjectsPage() {
       }
     };
 
-    scrollInterval = setInterval(autoScroll, 30);
+    scrollInterval = setInterval(autoScroll, 10);
 
     return () => {
       clearInterval(scrollInterval);
