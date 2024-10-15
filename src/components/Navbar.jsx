@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import DarkModeToggle from "./DarkMode";
 import logo from "../assets/logo.png";
-import logoDark from '../assets/logodark.png';
+import logoDark from "../assets/logodark.png";
 import darkmode from "../Atom";
 import { useRecoilState } from "recoil";
+import { IoIosClose, IoIosMenu } from "react-icons/io";
 function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const[isDark,setIsDark] = useRecoilState(darkmode);
+  const [isDark, setIsDark] = useRecoilState(darkmode);
   const handleScroll = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -102,7 +103,11 @@ function Navbar() {
       {isMobile && (
         <div className="flex justify-between">
           <div className="flex items-center gap-1">
-            <img src={isDark ? logo : logoDark} className="h-[100px] w-[100px]" alt="" />
+            <img
+              src={isDark ? logo : logoDark}
+              className="h-[100px] w-[100px]"
+              alt=""
+            />
             <DarkModeToggle />
           </div>
 
@@ -111,7 +116,15 @@ function Navbar() {
             className="text-white dark:text-white text-3xl focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? "✖" : "☰"}
+            {isOpen ? (
+              <div className="text-black dark:text-white">
+                <IoIosClose />
+              </div>
+            ) : (
+              <div className="text-black dark:text-white">
+                <IoIosMenu />
+              </div>
+            )}
           </button>
         </div>
       )}
