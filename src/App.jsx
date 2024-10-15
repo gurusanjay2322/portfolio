@@ -20,26 +20,34 @@ function App() {
     {
       logo: genik,
       company: 'Genik Technologies',
-      role: 'Full Stack Devloper Intern',
+      role: 'Full Stack Developer Intern',
       description: 'Worked on developing a web application and creating the server for the backend of the application',
       duration: 'Jan 2023 - May 2023',
     },
   ];
-  return (
-    <div className="bg-background h-screen">
-      <Navbar />
-      <div className=" bg-background">
-        {" "}
-        
-        <Hero />
-        <About />
 
-        <ProjectsPage />
-        <Experience experiences={experiences} />
-        <Contact />
+  const components = [
+    <Hero key="hero" />,
+    <About key="about" />,
+    <ProjectsPage key="projects" />,
+    <Experience key="experience" experiences={experiences} />,
+    <Contact key="contact" />,
+  ];
+
+  return (
+    <div className="bg-lightBackground dark:bg-background h-screen">
+      <Navbar />
+      <div className="bg-lightBackground dark:bg-background">
+        {components.map((Component, index) => (
+          <div key={index} className={`${alternateColor(index)}`}>
+            {Component}
+          </div>
+        ))}
       </div>
     </div>
   );
 }
+
+const alternateColor = (index) => (index % 2 === 0 ? "bg-lightBackground dark:bg-background" : "bg-lightBackground2 dark:bg-background2");
 
 export default App;

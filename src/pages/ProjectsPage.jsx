@@ -75,7 +75,7 @@ function ProjectsPage() {
       }
     };
 
-    scrollInterval = setInterval(autoScroll, 10);
+    scrollInterval = setInterval(autoScroll, 30);
 
     return () => {
       clearInterval(scrollInterval);
@@ -83,16 +83,16 @@ function ProjectsPage() {
   }, [projectData]);
 
   return (
-    <section id="projects">
-      <div className="min-h-screen bg-center bg-[url('./axiom-pattern.png')] bg-repeat overflow-y-auto">
-        <div className="flex justify-center pt-16">
-          <h1 className="text-5xl font-RockSalt text-primary font-bold">My Projects</h1>
+    <section id="projects" >
+      <div className="min-h-screen  items-center bg-center bg-[url('./axiom-pattern.png')] bg-repeat overflow-y-auto">
+        <div className="flex justify-center pt-32">
+          <h1 className="text-5xl font-RockSalt text-lightPrimary dark:text-primary font-bold">My Projects</h1>
         </div>
 
         {/* Scrolling container */}
         <div
           ref={scrollRef}
-          className="overflow-hidden flex flex-nowrap h-[calc(100vh-280px)] whitespace-nowrap"
+          className="overflow-hidden flex flex-nowrap justify-center items-center h-[calc(100vh-280px)] whitespace-nowrap"
         >
           <div className="flex flex-row gap-5 min-w-max pt-10">
             {projectData.map((project, index) => (

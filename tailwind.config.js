@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
@@ -13,16 +11,23 @@ export default {
         Ubuntu: ["Ubuntu", "sans-serif"],
         Galada: ["Galada", "cursive"],
         RockSalt: ["Rock Salt", "cursive"],
-        DmSerif: ["DM Serif Display","serif"],
+        DmSerif: ["DM Serif Display", "serif"],
       },
       colors: {
-        'text': '#eaf6f3',
-        'background': '#030807',
-        'primary': '#a6d6cf',
-        'secondary': '#763663',
-        'accent': '#b76961',
-       },       
+        text: "#eaf6f3",
+        background: "#030807",
+        background2: "#151515",
+        primary: "#a6d6cf",
+        secondary: "#763663",
+        accent: "#b76961",
+        lightText: "#0b0e19",
+        lightBackground: "#F4F6FF",
+        lightBackground2: "#F4F6FF",
+        lightPrimary: "#5c69b9",
+        lightSecondary: "#bba1d6",
+        lightAccent: "#b87ec7",
+      },
     },
   },
   plugins: [],
-}
+};
