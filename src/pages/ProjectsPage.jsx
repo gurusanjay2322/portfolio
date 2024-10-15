@@ -103,7 +103,7 @@ function ProjectsPage() {
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="flex justify-center pt-32">
-          <h1 className="text-5xl font-RockSalt text-lightPrimary dark:text-primary font-bold">
+          <h1 className="text-2xl md:text-5xl font-RockSalt text-lightPrimary dark:text-primary font-bold">
             My Projects
           </h1>
         </div>

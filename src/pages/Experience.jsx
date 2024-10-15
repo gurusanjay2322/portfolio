@@ -2,13 +2,13 @@ import React from 'react';
 import backgroundImage from '../assets/backgrounds/pattern2.png';
 const Experience = ({ experiences }) => {
   return (
-    <div className="flex flex-col justify-center items-center bg-center h-screen"  style={{backgroundImage: `url(${backgroundImage})`}} id='Experience'  >
-      <h2 className="text-5xl  text-center mb-8 text-lightPrimary dark:text-primary font-bold font-RockSalt">Experience</h2>
-      <div className="max-w-4xl mx-auto ">
+    <div className="flex flex-col justify-center items-center bg-center =h-screen"  style={{backgroundImage: `url(${backgroundImage})`}} id='Experience'  >
+      <h2 className="text-2xl mt-4 md:text-5xl  text-center mb-8 text-lightPrimary dark:text-primary font-bold font-RockSalt">Experience</h2>
+      <div className="w-[90vw] md:max-w-4xl mx-auto ">
         {experiences.map((experience, index) => (
           <div
             key={index}
-            className="flex items-center justify-between dark:bg-transparent border bg-transparent backdrop-blur-sm bg-opacity-30 bg-lightSecondary border-lightAccent dark:bg-secondary dark:border-accent dark:bg-opacity-30 dark:backdrop-blur-sm shadow-lg p-6 rounded-lg mb-8"
+            className="flex flex-col md:flex-row items-center justify-between dark:bg-transparent border bg-transparent backdrop-blur-sm bg-opacity-30 bg-lightSecondary border-lightAccent dark:bg-secondary dark:border-accent dark:bg-opacity-30 dark:backdrop-blur-sm shadow-lg p-6 rounded-lg mb-8"
           >
             <img
               src={experience.logo}

@@ -45,18 +45,18 @@ function Contact() {
       className="h-screen flex flex-col justify-center items-center bg-center " style={{backgroundImage: `url(${backgroundImage})`}}
       id="contact"
     >
-      <h1 className="font-bold font-RockSalt text-lightPrimary dark:text-primary text-5xl mb-6 text-center">
+      <h1 className="font-bold font-RockSalt text-lightPrimary dark:text-primary text-2xl md:text-5xl mb-6 text-center">
         Let's Connect
       </h1>
 
       <div className="flex justify-center items-center w-[70vw] max-w-7x dark:bg-transparent border bg-lightSecondary border-lightAccent dark:bg-secondary dark:border-accent dark:bg-opacity-30 dark:backdrop-blur-sm rounded-lg bg-transparent backdrop-blur-sm bg-opacity-30">
 
-        <div className="w-1/2 flex justify-center">
+        <div className="hidden md:w-1/2 md:flex md:justify-center">
           <Lottie options={defaultOptions} height={400} width={400} />
         </div>
 
  
-        <div className="w-1/2 p-8 ">
+        <div className="md:w-1/2 p-8 ">
           <form ref={form} onSubmit={sendEmail} className="space-y-4">
             <div className="flex flex-col">
               <label
