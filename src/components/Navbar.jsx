@@ -46,22 +46,26 @@ function Navbar() {
 
   return (
     <nav className="h-55px flex justify-center space-x-8 bg-transparent p-4 fixed top-0 left-0 w-full z-10 bg-lightSecondary border-b-lightAccent dark:bg-secondary rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border-b dark:border-primary dark:bg-clip-padding dark:backdrop-filter dark:backdrop-blur-sm dark:bg-opacity-20">
-      {["home", "About", "projects", "Experience", "contact"].map((section) => (
-        <button
-          key={section}
-          className={`transition-all duration-300 active:scale-95 text-lightText dark:text-text text-lg font-RockSalt font-bold ${
-            activeSection === section
-              ? "scale-125 dark:text-secondary text-lightSecondary" // Keep scaled up if active
-              : "hover:scale-125 hover:text-lightSecondary dark:hover:text-secondary" // Hover effect if not active
-          }`}
-          onClick={() => handleScroll(section)}
-        >
-          {section.charAt(0).toUpperCase() + section.slice(1)}
-        </button>
-      ))}
+      {["home", "About", "projects", "Experience", "contact"].map((section) => {
+        const isActive = activeSection === section;
+        
+        return (
+          <button
+            key={section}
+            className={`transition-all duration-300 active:scale-95 text-lg font-RockSalt font-bold 
+              ${isActive ? "scale-125" : "hover:scale-125"} 
+              ${isActive ? "text-lightSecondary dark:text-secondary " : "hover:text-lightSecondary dark:hover:text-secondary dark:text-white"}
+            `}
+            onClick={() => handleScroll(section)}
+          >
+            {section.charAt(0).toUpperCase() + section.slice(1)}
+          </button>
+        );
+      })}
       <DarkModeToggle />
     </nav>
   );
+  
 }
 
 export default Navbar;
