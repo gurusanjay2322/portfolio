@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DarkModeToggle from "./DarkMode";
 import logo from "../assets/logo.png";
-import logoDark from '../assets/logoDark.png';
+import logoDark from '../assets/logodark.png';
 import darkmode from "../Atom";
 import { useRecoilState } from "recoil";
 function Navbar() {
