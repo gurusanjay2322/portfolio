@@ -17,7 +17,7 @@ function App() {
       company: "Sairam Techno Incubator Foundation",
       role: "Software Developer Intern",
       description: "Worked on developing the frontend of a web application",
-      duration: "June 2023 - Aug 2023",
+      duration: "Mar 2024 - Apr 2024",
     },
     {
       logo: genik,
@@ -25,7 +25,7 @@ function App() {
       role: "Full Stack Developer Intern",
       description:
         "Worked on developing a web application and creating the server for the backend of the application",
-      duration: "Jan 2023 - May 2023",
+      duration: "Jul 2024 - Aug 2024",
     },
   ];
 
