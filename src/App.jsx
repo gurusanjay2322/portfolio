@@ -8,6 +8,7 @@ import techno from "./assets/techno.jpeg";
 import ProjectsPage from "./pages/ProjectsPage";
 import Contact from "./pages/Contact";
 import Lenis from 'lenis';
+import Exp from "./pages/Exp";
 
 function App() {
 
@@ -33,7 +34,8 @@ function App() {
     <Hero key="hero" />,
     <About key="about" />,
     <ProjectsPage key="projects" />,
-    <Experience key="experience" experiences={experiences} />,
+    // <Experience key="experience" experiences={experiences} />,
+    <Exp key="experience"/>,
     <Contact key="contact" />,
   ];
 
