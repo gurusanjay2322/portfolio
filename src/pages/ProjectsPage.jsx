@@ -42,7 +42,7 @@ function ProjectsPage() {
       src: seyal,
       title: 'Seyal Foundation',
       description: 'The Website for Seyal Foundation NGO',
-      link: 'https://seyalngo.org',
+      link: '',
     },
     {
       src: valo,
