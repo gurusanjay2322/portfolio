@@ -28,7 +28,7 @@ function Hero() {
         </p>
         <h1
           id="intro"
-          className="text-lightPrimary dark:text-primary font-bold text-3xl md:text-xl  italic font-RockSalt "
+          className="text-lightPrimary dark:text-primary font-bold text-xs md:text-xl  italic font-RockSalt "
         >
           Guru Sanjay R K
         </h1>

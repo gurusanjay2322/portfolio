@@ -10,3 +10,10 @@ h1{
     line-height: 5.9rem;
     font-size: 4rem;
 }
+@media screen and (max-width: 768px){
+    #intro{
+        line-height: 2.9rem;
+        font-size: 2rem;
+    }
+    
+}
