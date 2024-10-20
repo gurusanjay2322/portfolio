@@ -38,12 +38,12 @@ function ProjectsPage() {
       description: 'The Website for Innovatia 23 of Department Of Mtech CSE',
       link: 'https://innovatia23.tech',
     },
-    {
-      src: seyal,
-      title: 'Seyal Foundation',
-      description: 'The Website for Seyal Foundation NGO',
-      link: '',
-    },
+      {
+        src: seyal,
+        title: 'Seyal Foundation',
+        description: 'The Website for Seyal Foundation NGO',
+        link: '',
+      },
     {
       src: valo,
       title: 'Valobot',
