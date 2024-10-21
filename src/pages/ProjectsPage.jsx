@@ -9,10 +9,32 @@ import valo from '../assets/valo.jpg';
 import firebase from '../assets/firebase.png';
 import flask from '../assets/flask.png';
 import backgroundImage from '../assets/backgrounds/axiom-pattern.png';
-
+import SplitType from "split-type";
+import gsap from 'gsap'
+import { useGSAP } from "@gsap/react";
+import '../css/projects.css'
+import {ScrollTrigger} from 'gsap/all'
 function ProjectsPage() {
   const scrollRef = useRef(null);
-
+  gsap.registerPlugin(ScrollTrigger);
+  useGSAP(()=>{
+    const text = new SplitType("#myproj", {types: "chars"});
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#projects",
+        start: "top center",  
+        end: "bottom center",
+        markers: true,
+      },
+    });
+    timeline.to(".char", {
+      y: 0,
+      stagger: 0.05,
+      delay: 0.1,
+      duration: 0.1,
+      marker: true,
+    });
+  })
   const projectData = [
     {
       src: movies,
@@ -103,9 +125,9 @@ function ProjectsPage() {
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="flex justify-center pt-32">
-          <h1 className="text-2xl md:text-5xl font-RockSalt text-lightPrimary dark:text-primary font-bold">
+          <h2 id="myproj" className="text-2xl md:text-5xl font-RockSalt text-lightPrimary dark:text-primary font-bold">
             My Projects
-          </h1>
+          </h2>
         </div>
 
         {/* Scrolling container */}

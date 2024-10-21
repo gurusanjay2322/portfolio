@@ -15,9 +15,9 @@ export default {
       },
       colors: {
         text: "#eaf6f3",
-        background: "#030807",
-        background2: "#151515",
-        primary: "#a6d6cf",
+        background: "#2E073F",
+        background2: "#5a316a",
+        primary: "#FFFFF0",
         secondary: "#763663",
         accent: "#b76961",
         lightText: "#0b0e19",

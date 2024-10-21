@@ -85,7 +85,7 @@ function Navbar() {
                   ${isActive ? "scale-125" : "hover:scale-125"} 
                   ${
                     isActive
-                      ? "text-lightSecondary dark:text-secondary"
+                      ? "text-lightSecondary dark:text-primary"
                       : "hover:text-lightSecondary dark:hover:text-secondary dark:text-white"
                   }`}
                   onClick={() => handleScroll(section)}

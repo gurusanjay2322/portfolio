@@ -3,7 +3,7 @@ import backgroundImage from "../assets/backgrounds/axiom-pattern.png";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import SplitType from "split-type";
-import "./css/Hero.css";
+import "../css/Hero.css";
 
 function Hero() {
   // console.log(intro);

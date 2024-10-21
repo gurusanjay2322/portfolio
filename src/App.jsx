@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./pages/Hero";
 import About from "./pages/About";
-import Experience from "./pages/Experience";
 import genik from "./assets/genik.jpeg";
 import techno from "./assets/techno.jpeg";
 import ProjectsPage from "./pages/ProjectsPage";
