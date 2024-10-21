@@ -24,7 +24,7 @@ function ProjectsPage() {
         trigger: "#projects",
         start: "top center",  
         end: "bottom center",
-        markers: true,
+
       },
     });
     timeline.to(".char", {

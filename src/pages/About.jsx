@@ -14,7 +14,6 @@ function About() {
       scrollTrigger: {trigger: "#About",
         start: "top center",
         end: "bottom center",
-        markers: true,
       }
     });
     // timeline.from("#tag", { opacity: 0, duration: 2, delay: 1.5 });
